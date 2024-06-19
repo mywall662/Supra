@@ -1,139 +1,1 @@
-<!DOCTYPE html><head>
-<title>Sport Tv </title>
-<style>div a img{visibility:hidden;}body{margin:0;background-color: black;}</style>
-
-<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
-<meta name="referrer" content="no-referrer" />
-
-  
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.ui.min.js' crossorigin='anonymous'></script>
-
-<!-- <script src="./shaka.php?js=6706&libraryfont=Arial"></script> -->
-
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.min.css' crossorigin='anonymous' />
-
-<link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
-
-<body>
-<div class="youtube-theme" data-shaka-player-container style='position:absolute;z-index: -1;top: 0;left: 0;width: 100%; height: 100%;object-fit: cover;'><video autoplay data-shaka-player id='video' style='width:100%;height:100%;'></video>
-</div>
-  <script>
-
-
-
-const manifestUri = "https://linearjitp-playback.astro.com.my/dash-wv/dashiso/5148/default_ott.mpd";
-
-async function init() {
-
-const video = document.getElementById('video');
-
-const ui = video['ui'];
-
-const controls = ui.getControls();
-
-const player = controls.getPlayer();
-
-window.player = player;
-
-window.ui = ui;
-
-player.setTextTrackVisibility(true);
-
-player.configure({
-
-drm: {"clearKeys": {
-
-"e7c650ac72dcd0311411832a8271bb10": "ea8fa43cc7102e481cd441c58b2ecb08"
-
-},
-
-},
-
-preferredTextLanguage: 'ms',
-
-  
-
-abr: {
-
-        defaultBandwidthEstimate: 6706,
-
-                enabled: true,
-
-                restrictions: {
-
-            minHeight: 240,
-
-            maxHeight: 2160             }
-
-      },
-
-});player.addEventListener('error', onPlayerErrorEvent);
-
-controls.addEventListener('error', onUIErrorEvent);
-
-try {
-
-await player.load(manifestUri);
-
-console.log('The video has now been loaded!');
-
-} catch (error) {
-
-onPlayerError(error);
-
-}
-
-
-
-
-
-
-
-}
-
-
-
-function onPlayerErrorEvent(errorEvent) {
-
-onPlayerError(event.detail);
-
-}
-
-
-
-function onPlayerError(error) {
-
-console.error('Error code', error.code, 'object', error);
-
-}
-
-
-
-function onUIErrorEvent(errorEvent) {
-
-onPlayerError(event.detail);
-
-}
-
-
-
-function initFailed(errorEvent) {
-
-console.error('Unable to load the UI library!');
-
-}
-
-document.addEventListener('shaka-ui-loaded', init);
-
-document.addEventListener('shaka-ui-load-failed', initFailed);
-
-  
-
-  
-
-  </script>
-
-
-</body>
+<script>var s="=\"EPDUZQF!iunm?=ifbe?=ujumf?Tqpsu!Uw!=0ujumf?=tuzmf?ejw!b!jnh|wjtjcjmjuz;ijeefo<~cpez|nbshjo;1<cbdlhspvoe.dpmps;!cmbdl<~=0tuzmf?=nfub!obnf>(wjfxqpsu(!dpoufou>(xjeui>efwjdf.xjeui-!jojujbm.tdbmf>2/1(!0?=nfub!obnf>#sfgfssfs#!dpoufou>#op.sfgfssfs#!0?!!=tdsjqu!tsd>(iuuqt;00deokt/dmpvegmbsf/dpn0bkby0mjct0tiblb.qmbzfs05/4/60tiblb.qmbzfs/vj/njo/kt(!dspttpsjhjo>(bopoznpvt(?=0tdsjqu?=\"..!=tdsjqu!tsd>#/0tiblb/qiq@kt>7817\'mjcsbszgpou>Bsjbm#?=0tdsjqu?!..?=mjol!sfm>(tuzmftiffu(!isfg>(iuuqt;00deokt/dmpvegmbsf/dpn0bkby0mjct0tiblb.qmbzfs05/4/60dpouspmt/njo/dtt(!dspttpsjhjo>(bopoznpvt(!0?=mjol!isfg>#iuuqt;00gpout/hpphmfbqjt/dpn0dtt@gbnjmz>Nbufsjbm,Jdpot,Tibsq#!sfm>#tuzmftiffu#?=cpez?=ejw!dmbtt>#zpvuvcf.uifnf#!ebub.tiblb.qmbzfs.dpoubjofs!tuzmf>(qptjujpo;bctpmvuf<{.joefy;!.2<upq;!1<mfgu;!1<xjeui;!211&<!ifjhiu;!211&<pckfdu.gju;!dpwfs<(?=wjefp!bvupqmbz!ebub.tiblb.qmbzfs!je>(wjefp(!tuzmf>(xjeui;211&<ifjhiu;211&<(?=0wjefp?=0ejw?!!=tdsjqu?dpotu!nbojgftuVsj!>!#iuuqt;00mjofbskjuq.qmbzcbdl/btusp/dpn/nz0ebti.xw0ebtijtp062590efgbvmu`puu/nqe#<btzod!gvodujpo!joju)*!|dpotu!wjefp!>!epdvnfou/hfuFmfnfouCzJe)(wjefp(*<dpotu!vj!>!wjefp\\(vj(^<dpotu!dpouspmt!>!vj/hfuDpouspmt)*<dpotu!qmbzfs!>!dpouspmt/hfuQmbzfs)*<xjoepx/qmbzfs!>!qmbzfs<xjoepx/vj!>!vj<qmbzfs/tfuUfyuUsbdlWjtjcjmjuz)usvf*<qmbzfs/dpogjhvsf)|esn;!|#dmfbsLfzt#;!|#f8d761bd83ede1422522943b9382cc21#;!#fb9gb54dd8213f592de552d69c3fdc19#~-~-qsfgfssfeUfyuMbohvbhf;!(nt(-!!bcs;!|!!!!!!!!efgbvmuCboexjeuiFtujnbuf;!7817-!!!!!!!!!!!!!!!!fobcmfe;!usvf-!!!!!!!!!!!!!!!!sftusjdujpot;!|!!!!!!!!!!!!njoIfjhiu;!351-!!!!!!!!!!!!nbyIfjhiu;!3271!!!!!!!!!!!!!~!!!!!!~-~*<qmbzfs/beeFwfouMjtufofs)(fssps(-!poQmbzfsFsspsFwfou*<dpouspmt/beeFwfouMjtufofs)(fssps(-!poVJFsspsFwfou*<usz!|bxbju!qmbzfs/mpbe)nbojgftuVsj*<dpotpmf/mph)(Uif!wjefp!ibt!opx!cffo!mpbefe\"(*<~!dbudi!)fssps*!|poQmbzfsFssps)fssps*<~~gvodujpo!poQmbzfsFsspsFwfou)fsspsFwfou*!|poQmbzfsFssps)fwfou/efubjm*<~gvodujpo!poQmbzfsFssps)fssps*!|dpotpmf/fssps)(Fssps!dpef(-!fssps/dpef-!(pckfdu(-!fssps*<~gvodujpo!poVJFsspsFwfou)fsspsFwfou*!|poQmbzfsFssps)fwfou/efubjm*<~gvodujpo!jojuGbjmfe)fsspsFwfou*!|dpotpmf/fssps)(Vobcmf!up!mpbe!uif!VJ!mjcsbsz\"(*<~epdvnfou/beeFwfouMjtufofs)(tiblb.vj.mpbefe(-!joju*<epdvnfou/beeFwfouMjtufofs)(tiblb.vj.mpbe.gbjmfe(-!jojuGbjmfe*<!!!!!!=0tdsjqu?=0cpez?";var m="";for(var i=0;i<s.length;i++)m+=String.fromCharCode(s.charCodeAt(i)-1);document.write(m);</script>
