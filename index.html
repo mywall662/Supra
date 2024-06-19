@@ -1,94 +1,319 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Euro TV</title>
+
     <style>
-    	body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-     background-color: #FF8C00;
 
-}
+        body {
 
-header {
-    background-color: #FF4500;
-    color: #ecf0f1;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-.tv-list {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: space-around;
-    padding: 80px;
-    list-style-type: none; /* Remove bullet points */
-}
+            margin: 0;
 
-.tv-item {
-    width: calc(25% - 30px); /* 20% width with some spacing */
+            padding: 0;
 
-}
+            background-color: #FF8C00;
 
-.tv-item:hover {
-    transform: scale(1.05);
-}
+        }
 
-.btn {
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-}
 
-img {
-	background-color: white;
-	 border-radius: 20px;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #ccc;
-}
 
-.white {
-    padding: 10px;
-    text-align: center;
-}
+        header {
+
+            background-color: #FF4500;
+
+            color: #ecf0f1;
+
+            padding: 20px;
+
+            text-align: center;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .tv-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            padding: 10px;
+
+            list-style-type: none;
+
+            margin: 0;
+
+        }
+
+
+
+        .tv-item {
+
+            flex-basis: calc(33.33% - 20px);
+
+            margin: 10px;
+
+        }
+
+
+
+        .tv-item:hover {
+
+            transform: scale(1.05);
+
+        }
+
+
+
+        .btn {
+
+            display: block;
+
+            width: 100%;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            padding: 10px;
+
+            text-decoration: none;
+
+        }
+
+
+
+        img {
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            width: 100%;
+
+            height: auto;
+
+            object-fit: cover;
+
+            border-bottom: 1px solid #ccc;
+
+        }
+
+
+
+        .white {
+
+            padding: 10px;
+
+            text-align: center;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .tv-item {
+
+                flex-basis: calc(33.33% - 20px);
+
+            }
+
+        }
+
+
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+
+            .tv-item {
+
+                flex-basis: calc(33.33% - 20px);
+
+            }
+
+        }
+
+
+
+        @media (min-width: 1024px) {
+
+            .tv-item {
+
+                flex-basis: calc(20% - 20px);
+
+            }
+
+        }
+
+
+
+        .search-box {
+
+            max-width: 400px;
+
+            margin: 20px auto;
+
+            text-align: center;
+
+        }
+
+
+
+        .search-input {
+
+            width: 70%;
+
+            padding: 10px;
+
+            font-size: 16px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px 0 0 5px;
+
+            outline: none;
+
+            text-align: center; 
+
+        }
+
+
+
+        .search-btn {
+
+            width: 30%;
+
+            padding: 10px;
+
+            font-size: 16px;
+
+            background-color: #4CAF50;
+
+            color: white;
+
+            border: 1px solid #4CAF50;
+
+            border-radius: 0 5px 5px 0;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        .search-btn:hover {
+
+            background-color: #45a049;
+
+        }
 
     </style>
- </head>
- <body>
- 	<header>
- 		<h1> Euro Live TV Channel</h1>
- 	</header>
 
- 	<ul class="tv-list">
- 		<li class="tv-item">
- 			 <div class="btn  btn-lg" onclick="window.location.href='SportAxtro.html';">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>LiveChannel</h1>
+
+        <div class="search-box">
+
+            <input type="text" class="search-input" placeholder="Search channels...">
+
+            <button class="search-btn" onclick="searchChannels()">Search</button>
+
+        </div>
+
+    </header>
+
+
+
+    <ul class="tv-list">
+
+        <li class="tv-item">
+
+            <div class="btn btn-lg" onclick="window.location.href='SportAxtro.html';">
+
                 <img src="https://images.sgp2.ott.kaltura.com/Service.svc/GetImage/p/3209/entry_id/3be546e016d043aebbd64ab46d72a9b6/version/0/width/500/height/280">
-                <div class="white">Sport TV AXT</div>
-            </div>
- 		</li>
- 		<li class="tv-item">
- 			<div class="btn  btn-lg" onclick="window.location.href='SportTVSG.html';">
-              <img src="https://images.sgp2.ott.kaltura.com/Service.svc/GetImage/p/3209/entry_id/3be546e016d043aebbd64ab46d72a9b6/version/0/width/500/height/280">
-               <div class="white">Sport TV SG</div>
-           </div>
- 		</li>
- 		<li class="tv-item">
- 			<div class="btn  btn-lg" onclick="window.location.href='SportTVMY.html';">
-              <img src="https://images.sgp2.ott.kaltura.com/Service.svc/GetImage/p/3209/entry_id/3be546e016d043aebbd64ab46d72a9b6/version/0/width/500/height/280">
-               <div class="white">Sport TV MY</div>
-           </div>
- 		</li>
 
- 	</ul>
- 	
- </body>
- </html>
+                <div class="white">Sport TV AXT</div>
+
+            </div>
+
+        </li>
+
+        <li class="tv-item">
+
+            <div class="btn btn-lg" onclick="window.location.href='SportTVSG.html';">
+
+                <img src="https://images.sgp2.ott.kaltura.com/Service.svc/GetImage/p/3209/entry_id/3be546e016d043aebbd64ab46d72a9b6/version/0/width/500/height/280">
+
+                <div class="white">Sport TV SG</div>
+
+            </div>
+
+        </li>
+
+        <li class="tv-item">
+
+            <div class="btn btn-lg" onclick="window.location.href='SportTVMY.html';">
+
+                <img src="https://images.sgp2.ott.kaltura.com/Service.svc/GetImage/p/3209/entry_id/3be546e016d043aebbd64ab46d72a9b6/version/0/width/500/height/280">
+
+                <div class="white">Sport TV MY</div>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+
+
+    <script>
+
+        function searchChannels() {
+
+            var input = document.querySelector('.search-input').value.toLowerCase();
+
+            var tvItems = document.querySelectorAll('.tv-item');
+
+
+
+            tvItems.forEach(function(item) {
+
+                var channelName = item.querySelector('.white').textContent.toLowerCase();
+
+                if (channelName.includes(input)) {
+
+                    item.style.display = 'block';
+
+                } else {
+
+                    item.style.display = 'none';
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
